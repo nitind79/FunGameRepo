@@ -120,6 +120,13 @@ function updateGameArea() {
     }
     myScore.text = "SCORE: " + myGameArea.frameNo;
     myScore.update();
+    window.addEventListener('touchmove', function (e) 
+        {
+            //myGameArea.x = e.touches[0].screenX;
+            //myGameArea.y = e.touches[0].screenY;
+            myGamePiece.speedX = e.touches[0].screenX;
+            myGamePiece.speedY = e.touches[0].screenY;
+        })
     myGamePiece.newPos();    
     myGamePiece.update();
 }
